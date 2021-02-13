@@ -9,6 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     container: codecache/terraform:latest
     steps:
+      - name: debug
+        run: |
+          whoami
+          ls /
+          ls /github/home
+          terraform --version
       - name: key
         run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
       - name: clone
