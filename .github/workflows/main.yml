@@ -10,7 +10,7 @@ jobs:
     container: codecache/terraform:latest
     steps:
       - name: key
-        run: echo ${{ secrets.SSH_PRIVATE_KEY }} > ~/.ssh/id_rsa
+        run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
       - name: clone
         run: git clone git@github.com:codecache/example-private.git
       - name: validate
